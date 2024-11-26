@@ -1,3 +1,6 @@
+let playerChoice = 0;
+let computerChoice = 0;
+
 function getComputerChoice() {
     const randomNum = Math.random();
 
