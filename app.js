@@ -1,14 +1,14 @@
-let playerChoice = 0;
-let computerChoice = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     const randomNum = Math.random();
 
     if (randomNum < 1 / 3) {
-        return "Rock";
+        return "rock";
     } else if (randomNum < 2 / 3) {
-        return "Paper";
-    } else return ("Scissors");
+        return "paper";
+    } else return ("scissors");
 }
 
 function getPlayerChoice() {
@@ -19,3 +19,27 @@ function getPlayerChoice() {
     return choice;
 }
 
+function playRound(playerChoice, computerChoice) {
+    playerChoice = playerChoice.toLowerCase();
+    if (playerChoice === computerChoice) {
+        console.log(`It's a Tie! Both chose ${playerChoice}!`);
+    } else if (
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
+    ) {
+        console.log("Player won");
+        playerScore++;
+    } else {
+        computerScore++;
+        console.log("Computer Won");
+    }
+};
+
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+
+playRound(playerSelection, computerSelection);
+
+// Display scores
+console.log(`Score: Player ${playerScore} - Computer ${computerScore}`);
