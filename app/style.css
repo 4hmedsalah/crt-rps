@@ -1,0 +1,317 @@
+/* Reset all margins, paddings, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+    text-align: center;
+    font-family: "Exo", monospace;
+}
+
+body {
+    padding-bottom: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    image-rendering: pixelated;
+    /* Pixelated rendering */
+
+}
+
+/* Body styling to mimic a CRT terminal */
+main {
+    display: grid;
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+    animation: flicker 0.2s infinite;
+    flex-grow: 1;
+    place-items: center;
+}
+
+/* Flicker animation for a subtle CRT effect */
+@keyframes flicker {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.98;
+        /* Slight dimming */
+    }
+}
+
+/* Adding horizontal scan lines */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Avoid blocking interactions */
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 255, 0, 0.03) 0%,
+            rgba(0, 255, 0, 0.03) 1%,
+            transparent 1%,
+            transparent 2%);
+    z-index: 1;
+    /* Ensure it overlays all elements */
+}
+
+.title {
+    font-size: 2.4rem;
+    font-size: clamp(2.4rem, 2.044702842377261rem + 1.5159345391903534vw, 3.5rem);
+}
+
+.intro {
+    margin: 0 15%;
+    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 1.2354005167958657rem + 0.27562446167097326vw, 1.5rem);
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+
+/* Styling the images */
+.choices img {
+    width: 100%;
+    max-width: 130px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    image-rendering: initial;
+}
+
+img:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+}
+
+#updates {
+    animation: fadeInOut 3.5s ease-in-out infinite;
+    font-size: 1.9rem;
+    font-size: clamp(1.9rem, 1.221705426356589rem + 0.18087855297157623vw, 4rem);
+    font-weight: 200;
+}
+
+/* Initial prompt and game updates */
+.fade-in-message {
+    opacity: 0;
+    animation: fadeInText 0.25s ease-in-out forwards, glowEffect 1.5s ease-in-out infinite alternate;
+}
+
+/* Fade-in animation (Choose your sign to start) */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+#playAgainBtn,
+#playAgainBtn:after {
+    width: 190px;
+    height: 65px;
+    font-size: 20px;
+    background: linear-gradient(45deg, transparent 5%, #175c17 5%);
+    border: 0;
+    color: #00FF00;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00FF00;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#playAgainBtn:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'PLAY AGAIN';
+    display: flex;
+    position: absolute;
+    background: linear-gradient(45deg, transparent 3%, #00FF00 3%, #00FF00 5%, #175c17 5%);
+    text-shadow: -3px -3px 0px #00FF00, 3px 3px 0px #00FF00;
+    clip-path: var(--slice-0);
+    align-items: center;
+    justify-content: center;
+}
+
+#playAgainBtn:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+/* Play again button glitch animation */
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+.scores h2 {
+    margin-bottom: 12px;
+    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 2.0155038759689923rem + 0.12919896640826875vw, 4rem);
+}
+
+.scores {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.0155038759689923rem + 0.12919896640826875vw, 3rem);
+}
+
+.footer {
+    color: #00FF00;
+    padding: 10px;
+    border-top: 2px solid #00FF00;
+    position: relative;
+    width: 100%;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+    animation: flicker 0.2s infinite;
+    font-size: 1rem;
+    font-size: clamp(1rem, 1.3968992248062015rem + -0.41343669250646vw, 1.3rem);
+}
+
+/* Small Devices */
+@media (max-width: 640px) {
+    .title {
+        margin: 0 2%;
+    }
+
+    #updates {
+        margin: 0 4%;
+    }
+
+    .scores h2 {
+        font-size: 2.5rem;
+    }
+
+    .scores {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 475px) {
+
+
+    .intro {
+        margin: 0 3%;
+
+    }
+
+
+    .choices img {
+        max-width: 120px;
+    }
+
+    #updates {
+        margin: 0 3%;
+    }
+}
+
+@media (max-width: 380px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .intro {
+        font-size: 1.1rem;
+    }
+
+    #updates {
+        font-size: 1.7rem;
+    }
+
+    .choices img {
+        max-width: 100px;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+
+
+}
