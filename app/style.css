@@ -12,11 +12,11 @@ html {
 }
 
 body {
-    padding-bottom: 0px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     image-rendering: pixelated;
     /* Pixelated rendering */
 
@@ -28,9 +28,11 @@ main {
     color: #00FF00;
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
     animation: flicker 0.2s infinite;
-    flex-grow: 1;
     place-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
     max-height: 700px;
+    grid-template-columns: 1fr;
 }
 
 /* Flicker animation for a subtle CRT effect */
@@ -65,26 +67,19 @@ body::before {
 }
 
 .title {
-    font-size: 2.4rem;
-    font-size: clamp(2.4rem, 2.044702842377261rem + 1.5159345391903534vw, 3.5rem);
-}
-
-.intro {
-    margin: 0 15%;
-    font-size: 1.3rem;
-    font-size: clamp(1.3rem, 1.2354005167958657rem + 0.27562446167097326vw, 1.5rem);
+    font-size: 3.5rem;
 }
 
 .choices {
     display: flex;
     justify-content: center;
-    gap: 3%;
+    gap: 5%;
 }
 
 /* Styling the images */
 .choices img {
     width: 100%;
-    max-width: 130px;
+    max-width: 150px;
     cursor: pointer;
     transition: transform 0.5s;
     image-rendering: initial;
@@ -133,7 +128,6 @@ img:hover {
 #playAgainBtn:after {
     width: 190px;
     height: 65px;
-    font-size: 20px;
     background: linear-gradient(45deg, transparent 5%, #175c17 5%);
     border: 0;
     color: #00FF00;
@@ -149,6 +143,8 @@ img:hover {
     justify-content: center;
     margin: 0 auto;
     cursor: pointer;
+    font-weight: lighter;
+    font-size: 1.2rem;
 }
 
 #playAgainBtn:after {
@@ -247,7 +243,10 @@ img:hover {
     color: #00FF00;
     padding: 10px;
     border-top: 2px solid #00FF00;
-    position: relative;
+    position: fixed;
+    /* Changed from relative to fixed */
+    bottom: 0;
+    /* Stick to the bottom */
     width: 100%;
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
     animation: flicker 0.2s infinite;
@@ -257,21 +256,26 @@ img:hover {
 
 /* Small Devices */
 @media (max-width: 640px) {
+    main {
+        margin-bottom: 0;
+    }
+
     .title {
-        margin: 0 2%;
+        font-size: 3rem;
     }
 
-    #updates {
-        margin: 0 4%;
+    .choices img {
+        max-width: 120px;
     }
 
-    .scores h2 {
-        font-size: 2.5rem;
+    .footer {
+        position: initial;
+        /* Changed from relative to fixed */
+        bottom: initial;
+        /* Stick to the bottom */
     }
 
-    .scores {
-        font-size: 1.5rem;
-    }
+
 }
 
 /* Extra Small Devices */
@@ -285,34 +289,10 @@ img:hover {
 
 
     .choices img {
-        max-width: 120px;
+        max-width: 110px;
     }
 
     #updates {
         margin: 0 3%;
     }
-}
-
-@media (max-width: 380px) {
-    .title {
-        font-size: 2.2rem;
-    }
-
-    .intro {
-        font-size: 1.1rem;
-    }
-
-    #updates {
-        font-size: 1.7rem;
-    }
-
-    .choices img {
-        max-width: 100px;
-    }
-
-    .footer {
-        font-size: 1rem;
-    }
-
-
 }
