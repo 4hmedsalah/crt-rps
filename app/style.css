@@ -30,6 +30,7 @@ main {
     animation: flicker 0.2s infinite;
     flex-grow: 1;
     place-items: center;
+    max-height: 700px;
 }
 
 /* Flicker animation for a subtle CRT effect */
