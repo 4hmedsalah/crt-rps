@@ -8,15 +8,14 @@
 html {
     background-color: black;
     text-align: center;
-    font-family: "Exo", monospace;
 }
 
 body {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-
+    align-items: center;
+    font-family: "Exo", monospace;
     image-rendering: pixelated;
     /* Pixelated rendering */
 
@@ -24,16 +23,19 @@ body {
 
 /* Body styling to mimic a CRT terminal */
 main {
+    width: 90vh;
+    margin: 0 auto;
     display: grid;
     color: #00FF00;
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
     animation: flicker 0.2s infinite;
-    place-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    max-height: 700px;
+    margin-bottom: 43.2px;
     grid-template-columns: 1fr;
+    align-items: center;
+    gap: 30px;
 }
+
+
 
 /* Flicker animation for a subtle CRT effect */
 @keyframes flicker {
@@ -71,15 +73,16 @@ body::before {
 }
 
 .choices {
+    height: 130px;
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 1%;
 }
 
 /* Styling the images */
 .choices img {
     width: 100%;
-    max-width: 150px;
+    max-width: 130px;
     cursor: pointer;
     transition: transform 0.5s;
     image-rendering: initial;
@@ -252,21 +255,26 @@ img:hover {
     animation: flicker 0.2s infinite;
     font-size: 1rem;
     font-size: clamp(1rem, 1.3968992248062015rem + -0.41343669250646vw, 1.3rem);
+    left: 0;
+    /* Align to the left edge */
 }
 
 /* Small Devices */
 @media (max-width: 640px) {
     main {
         margin-bottom: 0;
+        max-width: 550px;
+        max-height: 650px;
+        gap: 15px;
     }
 
     .title {
         font-size: 3rem;
     }
 
-    .choices img {
+    /* .choices img {
         max-width: 120px;
-    }
+    } */
 
     .footer {
         position: initial;
@@ -288,11 +296,15 @@ img:hover {
     }
 
 
-    .choices img {
+    /* .choices img {
         max-width: 110px;
-    }
+    } */
 
     #updates {
         margin: 0 3%;
     }
 }
+
+
+/* 15 instead of 30
+        
