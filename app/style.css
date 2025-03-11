@@ -265,16 +265,24 @@ img:hover {
         margin-bottom: 0;
         max-width: 550px;
         max-height: 650px;
-        gap: 15px;
+        gap: 10px;
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    /* .choices img {
-        max-width: 120px;
-    } */
+    .scores h2 {
+        font-size: 1.5rem;
+    }
+
+    .scores {
+        font-size: 20px;
+    }
+
+    .choices img {
+        max-width: 100px;
+    }
 
     .footer {
         position: initial;
