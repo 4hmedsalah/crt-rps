@@ -263,8 +263,6 @@ img:hover {
 /* Small Devices */
 @media (max-width: 640px) {
     main {
-        max-width: 600px;
-        max-height: 700px;
         gap: 15px;
     }
 
