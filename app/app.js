@@ -41,8 +41,8 @@ const winMessages = [
 
 const loseMessages = [
     "Defeat for now, but the challenge continues.",
-    "Defeated. The system wins this round, but you have another shot.",
-    "You’ve lost, but the game isn’t over. Try again and turn the tide.",
+    "Defeated. The system wins this round.",
+    "You’ve lost, but the game isn’t over.",
     "The machine outsmarts you, try once more.",
     "It’s not the end—just a setback. I’ll try again.",
     "The system won, gotta try again."
