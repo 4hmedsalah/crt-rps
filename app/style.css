@@ -36,6 +36,7 @@ main {
     grid-template-columns: 1fr;
     align-items: center;
     gap: 30px;
+    padding-bottom: 58px;
 }
 
 
@@ -160,7 +161,6 @@ img:hover {
     --slice-3: inset(10% -6px 85% 0);
     --slice-4: inset(40% -6px 43% 0);
     --slice-5: inset(80% -6px 5% 0);
-
     content: 'PLAY AGAIN';
     display: flex;
     position: absolute;
@@ -242,13 +242,11 @@ img:hover {
 .scores {
     font-size: 1.5rem;
     font-size: clamp(1.5rem, 1.0155038759689923rem + 0.12919896640826875vw, 3rem);
-    margin-bottom: 30px;
 }
 
 .scores #firstWins {
     letter-spacing: 3px;
     margin-bottom: 12px;
-
 }
 
 .footer {
@@ -260,7 +258,7 @@ img:hover {
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
     animation: flicker 0.2s infinite;
     font-size: 1rem;
-    font-size: clamp(1rem, 1.3968992248062015rem + -0.41343669250646vw, 1.3rem);
+    font-size: clamp(1rem, 0.9149214659685864rem + 0.34904013961605584vw, 1.25rem);
     position: fixed;
     bottom: 0;
 }
@@ -268,7 +266,7 @@ img:hover {
 /* Small Devices */
 @media (max-width: 640px) {
     main {
-        padding-bottom: 48.8px;
+        padding-bottom: 43.2px;
         gap: 0px;
         min-height: 100dvh;
         /* More consistent height on mobile */
@@ -284,17 +282,15 @@ img:hover {
     }
 
     .scores h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .scores {
-        font-size: 20px;
+        font-size: 1.5;
         margin-bottom: 0px;
     }
 
     .choices img {
         max-width: 100px;
     }
-
-    .footer {}
 }
