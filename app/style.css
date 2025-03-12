@@ -23,6 +23,8 @@ body {
 
 html, body {
     overflow: hidden;
+    height: 100%;
+    /* Fixes issues on Safari */
 }
 
 /* Body styling to mimic a CRT terminal */
@@ -263,7 +265,9 @@ img:hover {
 /* Small Devices */
 @media (max-width: 640px) {
     main {
-        gap: 15px;
+        gap: 0px;
+        min-height: 100dvh;
+        /* More consistent height on mobile */
     }
 
     .title {
