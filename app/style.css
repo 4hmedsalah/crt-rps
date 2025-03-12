@@ -13,12 +13,17 @@ html {
 body {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Exo", monospace;
     image-rendering: pixelated;
     /* Pixelated rendering */
+}
 
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
 /* Body styling to mimic a CRT terminal */
@@ -32,6 +37,7 @@ main {
     grid-template-columns: 1fr;
     align-items: center;
     gap: 30px;
+    flex-grow: 1;
 }
 
 
@@ -263,7 +269,7 @@ img:hover {
     main {
         max-width: 600px;
         max-height: 700px;
-        gap: 20px;
+        gap: 10px;
     }
 
     .title {
@@ -288,29 +294,4 @@ img:hover {
     }
 
     .footer {}
-
-
 }
-
-/* Extra Small Devices */
-@media (max-width: 475px) {
-
-
-    .intro {
-        margin: 0 3%;
-
-    }
-
-
-    /* .choices img {
-        max-width: 110px;
-    } */
-
-    #updates {
-        margin: 0 3%;
-    }
-}
-
-
-/* 15 instead of 30
-        
