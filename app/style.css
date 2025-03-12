@@ -35,7 +35,7 @@ main {
     animation: flicker 0.2s infinite;
     grid-template-columns: 1fr;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 
@@ -235,7 +235,6 @@ img:hover {
 }
 
 .scores h2 {
-    margin-bottom: 12px;
     font-size: 2.5rem;
     font-size: clamp(2.5rem, 2.0155038759689923rem + 0.12919896640826875vw, 4rem);
 }
@@ -243,7 +242,13 @@ img:hover {
 .scores {
     font-size: 1.5rem;
     font-size: clamp(1.5rem, 1.0155038759689923rem + 0.12919896640826875vw, 3rem);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+.scores #firstWins {
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+
 }
 
 .footer {
