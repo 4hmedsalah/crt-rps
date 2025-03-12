@@ -35,7 +35,7 @@ main {
     animation: flicker 0.2s infinite;
     grid-template-columns: 1fr;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 
@@ -243,6 +243,7 @@ img:hover {
 .scores {
     font-size: 1.5rem;
     font-size: clamp(1.5rem, 1.0155038759689923rem + 0.12919896640826875vw, 3rem);
+    margin-bottom: 40px;
 }
 
 .footer {
@@ -283,6 +284,7 @@ img:hover {
 
     .scores {
         font-size: 20px;
+        margin-bottom: 0px;
     }
 
     .choices img {
