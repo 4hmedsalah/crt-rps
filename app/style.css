@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,12 +23,11 @@ body {
 
 html, body {
     overflow: hidden;
-    min-height: 100vh;
 }
 
 /* Body styling to mimic a CRT terminal */
 main {
-    max-width: 90%;
+    max-width: 95%;
     margin: 0 auto;
     display: grid;
     color: #00FF00;
