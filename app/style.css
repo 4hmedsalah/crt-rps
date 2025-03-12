@@ -255,12 +255,14 @@ img:hover {
     animation: flicker 0.2s infinite;
     font-size: 1rem;
     font-size: clamp(1rem, 1.3968992248062015rem + -0.41343669250646vw, 1.3rem);
-    margin-top: auto
+    position: fixed;
+    bottom: 0;
 }
 
 /* Small Devices */
 @media (max-width: 640px) {
     main {
+        padding-bottom: 48.8px;
         gap: 0px;
         min-height: 100dvh;
         /* More consistent height on mobile */
