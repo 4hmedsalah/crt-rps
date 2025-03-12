@@ -36,11 +36,9 @@ const winMessages = [
     "You outsmarted the system.",
     "Maybe it was luck, but you've got the win.",
     "It could’ve been luck... but you take the win.",
-    "The challenge was tough, but you found a way to win."
 ];
 
 const loseMessages = [
-    "Defeat for now, but the challenge continues.",
     "Defeated. The system wins this round.",
     "You’ve lost, but the game isn’t over.",
     "The machine outsmarts you, try once more.",
