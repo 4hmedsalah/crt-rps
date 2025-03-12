@@ -24,7 +24,8 @@ body {
 html, body {
     overflow: hidden;
     height: 100%;
-    /* Fixes issues on Safari */
+    height: -webkit-fill-available;
+    /* Fallback for Safari */
 }
 
 /* Body styling to mimic a CRT terminal */
