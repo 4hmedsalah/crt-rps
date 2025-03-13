@@ -1,4 +1,3 @@
-const intro = document.querySelector(".intro");
 const choices = document.querySelector(".choices");
 const playerScoreDisplay = document.querySelector("#playerScoreDisplay");
 const computerScoreDisplay = document.querySelector("#computerScoreDisplay");
@@ -21,12 +20,12 @@ function updateScoreDisplays() {
     computerScoreDisplay.textContent = `COMPUTER: ${computerScore}`;
 }
 
-// Function to display a glowing message
+// Function to display score updates
 function scoreMessage(message) {
     updates.textContent = ""; // Clear previous message
     const messageContent = document.createElement("p");
     messageContent.textContent = message;
-    messageContent.className = "fade-in-message"; // Add class for animation and glow
+    messageContent.className = "fade-in-message"; // Add class for animation and style
     updates.appendChild(messageContent);
 }
 
@@ -36,13 +35,11 @@ const winMessages = [
     "You outsmarted the system.",
     "Maybe it was luck, but you've got the win.",
     "It could’ve been luck... but you take the win.",
-    "The challenge was tough, but you found a way to win."
 ];
 
 const loseMessages = [
-    "Defeat for now, but the challenge continues.",
-    "Defeated. The system wins this round, but you have another shot.",
-    "You’ve lost, but the game isn’t over. Try again and turn the tide.",
+    "Defeated. The system wins this round.",
+    "You’ve lost, but the game isn’t over.",
     "The machine outsmarts you, try once more.",
     "It’s not the end—just a setback. I’ll try again.",
     "The system won, gotta try again."
@@ -60,7 +57,7 @@ function showRandomLoseMessage() {
     return loseMessages[randomIndex];
 }
 
-// Check scores and end game if necessary
+// Check scores and end game if conditions met
 function checkScore() {
     if (playerScore === 5) {
         const randomWinMessage = showRandomWinMessage();
@@ -94,10 +91,10 @@ function resetGame() {
     // Reset the content of #updates
     updates.textContent = "Choose your sign to start";
 
-    // Remove the style from #updates
+    // Reset the style from #updates
     updates.removeAttribute("style");
 
-    // Reset scores or any other game state
+    // Reset scores
     updateScoreDisplays();
 }
 
