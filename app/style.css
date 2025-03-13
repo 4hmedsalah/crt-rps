@@ -17,6 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Exo", monospace;
+    animation: flicker 0.2s infinite;
     image-rendering: pixelated;
     /* Pixelated rendering */
 }
@@ -32,13 +33,11 @@ main {
     display: grid;
     color: #00FF00;
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
-    animation: flicker 0.2s infinite;
     grid-template-columns: 1fr;
     align-items: center;
     gap: 30px;
     padding-bottom: 58px;
 }
-
 
 
 /* Flicker animation for a subtle CRT effect */
@@ -83,7 +82,6 @@ body::before {
     gap: 1%;
 }
 
-/* Styling the images */
 .choices img {
     width: 100%;
     max-width: 130px;
@@ -102,12 +100,6 @@ img:hover {
     font-size: 1.9rem;
     font-size: clamp(1.9rem, 1.221705426356589rem + 0.18087855297157623vw, 4rem);
     font-weight: 200;
-}
-
-/* Initial prompt and game updates */
-.fade-in-message {
-    opacity: 0;
-    animation: fadeInText 0.25s ease-in-out forwards, glowEffect 1.5s ease-in-out infinite alternate;
 }
 
 /* Fade-in animation (Choose your sign to start) */
@@ -131,6 +123,12 @@ img:hover {
     }
 }
 
+/* Initial prompt and game updates */
+.fade-in-message {
+    opacity: 0;
+    animation: fadeInText 0.25s ease-in-out forwards, glowEffect 1.5s ease-in-out infinite alternate;
+}
+
 #playAgainBtn,
 #playAgainBtn:after {
     width: 190px;
@@ -141,10 +139,6 @@ img:hover {
     letter-spacing: 3px;
     box-shadow: 6px 0px 0px #00FF00;
     outline: transparent;
-    position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,8 +161,6 @@ img:hover {
     background: linear-gradient(45deg, transparent 3%, #00FF00 3%, #00FF00 5%, #175c17 5%);
     text-shadow: -3px -3px 0px #00FF00, 3px 3px 0px #00FF00;
     clip-path: var(--slice-0);
-    align-items: center;
-    justify-content: center;
 }
 
 #playAgainBtn:hover:after {
@@ -253,10 +245,8 @@ img:hover {
     color: #00FF00;
     padding: 10px;
     border-top: 2px solid #00FF00;
-    /* Changed from relative to fixed */
     width: 100%;
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
-    animation: flicker 0.2s infinite;
     font-size: 1rem;
     font-size: clamp(1rem, 0.9149214659685864rem + 0.34904013961605584vw, 1.25rem);
     position: fixed;
@@ -278,7 +268,6 @@ img:hover {
 
     #updates {
         height: 80px;
-
     }
 
     .scores h2 {
